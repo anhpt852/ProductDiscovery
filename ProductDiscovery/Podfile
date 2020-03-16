@@ -6,11 +6,11 @@ target 'ProductDiscovery' do
   use_frameworks!
 
   # Pods for ProductDiscovery
-	pod 'SDWebImage', '~> 4.0'
+	pod 'SDWebImage'
 	pod 'FormatterKit'
 	pod 'MBProgressHUD'
 	pod 'Alamofire'
-	pod 'AlamofireObjectMapper', '~> 5.2'
+	pod 'AlamofireObjectMapper'
   pod 'PMAlertController'
   pod 'iCarousel', '~> 1.8'
   pod 'BBBadgeBarButtonItem'

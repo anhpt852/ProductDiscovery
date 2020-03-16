@@ -10,18 +10,23 @@ import UIKit
 import ObjectMapper
 
 class ProductItemEntity: BaseEntity {
-    private(set) var name: NSString?
-    private(set) var sku: NSString?
-    private(set) var productStatus: [ProductStatus]?
-    private(set) var images: [ProductImage]?
-    private(set) var price: [Price]?
-    private(set) var promotionPrices:[PromotionPrice]?
+    var name: NSString?
+    var sku: NSString?
+    var status: ProductStatus?
+    var images: [ProductImage]?
+    var price: Price?
+    var promotionPrices:[PromotionPrice]?
     required init?(map: Map) {
         super.init(map: map)
     }
     
     override func mapping(map: Map) {
-        
+        name <- map["name"]
+        sku <- map["sku"]
+        status <- map["status"]
+        images <- map["images"]
+        price <- map["price"]
+        promotionPrices <- map["promotionPrices"]
     }
 }
 

@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AlamofireObjectMapper (5.2.1):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
   - BBBadgeBarButtonItem (1.2)
   - FormatterKit (1.9.0):
     - FormatterKit/AddressFormatter (= 1.9.0)
@@ -38,22 +38,22 @@ PODS:
   - MBProgressHUD (1.2.0)
   - ObjectMapper (3.5.2)
   - PMAlertController (4.0.0)
-  - SDWebImage (4.4.8):
-    - SDWebImage/Core (= 4.4.8)
-  - SDWebImage/Core (4.4.8)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireObjectMapper (~> 5.2)
+  - AlamofireObjectMapper
   - BBBadgeBarButtonItem
   - FormatterKit
   - iCarousel (~> 1.8)
   - MBProgressHUD
   - PMAlertController
-  - SDWebImage (~> 4.0)
+  - SDWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireObjectMapper
     - BBBadgeBarButtonItem
@@ -65,16 +65,16 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   FormatterKit: 184db51bf120b633693a73624a4cede89ec51a41
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
-  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
 
-PODFILE CHECKSUM: 0aac162c17be00b76d51e7b6d9678c1cb47d72a8
+PODFILE CHECKSUM: bbaf5c4ab3171d2e7b984460fcd586c6d71c036b
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.8.3

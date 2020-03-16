@@ -18,10 +18,24 @@ class ProductListViewController: BaseViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         _tableView.register(UINib(nibName: "ProductListViewTableViewCell", bundle: nil), forCellReuseIdentifier: ProductListViewTableViewCell.cell_identifier())
+        self.fetchData()
     }
     
     override func fetchData() {
-        
+        NetworkManager.sharedManager.getListProduct({result in
+            do {
+                let value = try result.get()
+                
+                let product = value.result?.products![0];
+                let status = product?.status?.sale;
+                NSLog("\(value)")
+                NSLog("\(status!)")
+            }
+            catch{
+                
+            }
+            
+        })
     }
 
 }

@@ -69,7 +69,7 @@ class ProductListItemFilterEntity: BaseEntity {
 class ProductListExtraEntity: BaseEntity {
     private(set) var totalItems : NSInteger?
     private(set) var page: NSInteger?
-    private(set) var pageSize: [ProductListItemFilterEntity]?
+    private(set) var pageSize: NSInteger?
     private(set) var priceRanges: [ProductListExtraPriceRangeEntity]?
     
     required init?(map: Map) {
@@ -77,9 +77,10 @@ class ProductListExtraEntity: BaseEntity {
     }
     
     override func mapping(map: Map) {
-        totalItems <- map["products"]
+        totalItems <- map["totalItems"]
         page <- map["page"]
         pageSize <- map["pageSize"]
+        priceRanges <- map["priceRanges"]
     }
 }
 

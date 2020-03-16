@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182F40F1241FC54000DB2FED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F40F0241FC54000DB2FED /* NetworkManager.swift */; };
 		222F5F006E4415EAC5A84DFE /* Pods_ProductDiscoveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35B1F114F4489D7C49E3910 /* Pods_ProductDiscoveryTests.framework */; };
 		A5343E52241F38BE00984DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5343E51241F38BE00984DED /* AppDelegate.swift */; };
 		A5343E54241F38BE00984DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5343E53241F38BE00984DED /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182F40F0241FC54000DB2FED /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5E322B7240EE98EA9CF20F7F /* Pods-ProductDiscoveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscoveryTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductDiscoveryTests/Pods-ProductDiscoveryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EC292BB2AA7597BEC054DB7 /* Pods-ProductDiscovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscovery.release.xcconfig"; path = "Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery.release.xcconfig"; sourceTree = "<group>"; };
 		A5343E4E241F38BE00984DED /* ProductDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182F40EE241FC3A700DB2FED /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A5343E57241F38BE00984DED /* Main.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		182F40EF241FC51000DB2FED /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				182F40F0241FC54000DB2FED /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		817505B320C40C2A604BA20C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 		A5343E50241F38BE00984DED /* ProductDiscovery */ = {
 			isa = PBXGroup;
 			children = (
+				182F40EE241FC3A700DB2FED /* Interface */,
 				A5343E77241F398B00984DED /* Common */,
 				A5343E76241F397F00984DED /* Helpers */,
 				A5343E75241F397600984DED /* Controllers */,
@@ -160,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				A5343E7A241F3B0E00984DED /* ProductListViewTableViewCell */,
-				A5343E57241F38BE00984DED /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				A549C6AA241F87AB006822B5 /* ProductDiscovery-Bridging-Header.h */,
+				182F40EF241FC51000DB2FED /* NetworkManager */,
 				A549C6B7241F91B8006822B5 /* StoryboardManager */,
 				A549C6AC241F89BC006822B5 /* Enum */,
 				A549C6AB241F89B1006822B5 /* Extensions */,
@@ -470,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182F40F1241FC54000DB2FED /* NetworkManager.swift in Sources */,
 				A549C6B4241F8EE5006822B5 /* ProductDetailTopContainerViewController.swift in Sources */,
 				A549C698241F69D8006822B5 /* ProductListEntity.swift in Sources */,
 				A5343E56241F38BE00984DED /* ProductListViewController.swift in Sources */,
