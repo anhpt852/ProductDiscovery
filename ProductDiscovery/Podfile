@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ProductDiscovery' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ProductDiscovery
+	pod 'SDWebImage', '~> 4.0'
+	pod 'FormatterKit'
+	pod 'MBProgressHUD'
+	pod 'Alamofire'
+	pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'PMAlertController'
+  pod 'iCarousel', '~> 1.8'
+  pod 'BBBadgeBarButtonItem'
+  target 'ProductDiscoveryTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
