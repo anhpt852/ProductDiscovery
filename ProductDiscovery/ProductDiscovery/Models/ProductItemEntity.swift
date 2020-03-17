@@ -10,12 +10,13 @@ import UIKit
 import ObjectMapper
 
 class ProductItemEntity: BaseEntity {
-    var name: NSString?
-    var sku: NSString?
+    var name: String?
+    var sku: String?
     var status: ProductStatus?
     var images: [ProductImage]?
     var price: Price?
     var promotionPrices:[PromotionPrice]?
+    var attributeGroups:[ProductAttributes]?
     required init?(map: Map) {
         super.init(map: map)
     }
@@ -27,13 +28,14 @@ class ProductItemEntity: BaseEntity {
         images <- map["images"]
         price <- map["price"]
         promotionPrices <- map["promotionPrices"]
+        attributeGroups <- map["attributeGroups"]
     }
 }
 
 class ProductImage: BaseEntity {
-    private(set) var url: NSString?
+    private(set) var url: String?
     private(set) var priority: NSInteger?
-    private(set) var path: NSString?
+    private(set) var path: String?
     
     required init?(map: Map) {
         super.init(map: map)
@@ -62,8 +64,8 @@ class Price: BaseEntity {
 
 
 class PromotionPrice: BaseEntity {
-    private(set) var channel: NSString?
-    private(set) var terminal: NSString?
+    private(set) var channel: String?
+    private(set) var terminal: String?
     private(set) var finalPrice: NSInteger?
     private(set) var promotionPrice: NSInteger?
     private(set) var bestPrice: NSInteger?
@@ -85,7 +87,7 @@ class PromotionPrice: BaseEntity {
 
 class ProductStatus: BaseEntity {
     private(set) var publish: Bool?
-    private(set) var sale: NSString?
+    private(set) var sale: String?
 
     
     required init?(map: Map) {
@@ -95,5 +97,27 @@ class ProductStatus: BaseEntity {
     override func mapping(map: Map) {
         publish <- map["publish"]
         sale <- map["sale"]
+    }
+}
+
+class ProductAttributes: BaseEntity {
+    private(set) var id: NSInteger?
+    private(set) var name: String?
+    private(set) var value: String?
+    private(set) var parentId: NSInteger?
+    private(set) var priority: NSInteger?
+
+
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        value <- map["value"]
+        parentId <- map["parentId"]
+        priority <- map["priority"]
     }
 }

@@ -32,6 +32,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureNavigationBar()
         // Do any additional setup after loading the view.
     }
     
@@ -45,9 +46,11 @@ class BaseViewController: UIViewController {
         
         if let parent = self.parent {
             if( parent.isKind(of: UINavigationController.self)){
-                var image:UIImage?
-                image = UIImage.init(named: "bg_navigation_noel")?.resizable_()
-                self.navigationController?.navigationBar.setBackgroundImage(image, for: .any, barMetrics:.default)
+                let navigationBarBackgroundColor = self.navigationBarBackgroundColor()
+                if let navigationBackgroundColor = navigationBarBackgroundColor{
+                    self.navigationController?.navigationBar.barTintColor = navigationBackgroundColor
+//                    self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(color: navigationBackgroundColor), for: .any, barMetrics:.default)
+                }
                 if self.isNavigationBarShadowDisable() {
                     self.navigationController?.navigationBar.shadowImage = UIImage.init()
                     self.navigationController?.navigationBar.titleTextAttributes = [
@@ -82,6 +85,10 @@ class BaseViewController: UIViewController {
     
     func updateData(){
         
+    }
+    
+    func navigationBarBackgroundColor() -> Color?{
+        return nil
     }
     
     func hideLoadingIndicatorView(){
@@ -134,11 +141,15 @@ class BaseViewController: UIViewController {
     }
     
     func backBarButtonItem() -> UIBarButtonItem {
-        let item:UIBarButtonItem = self.barButtonItemWithImageNamed(imageNamed: "ic_back", action:Selector.init(("backClicked:")))
+        let item:UIBarButtonItem = self.barButtonItemWithImageNamed(imageNamed: "ic_back", action:#selector(self.backClicked))
         let button:UIButton = (item.customView as? UIButton)!
         
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16.0, bottom: 0, right: 0)
         return item
+    }
+    
+    @objc func backClicked(_ sender:UIBarButtonItem){
+        self.navigationController?.popViewController(animated: true)
     }
     
     func cartBarButtonItem() -> UIBarButtonItem {
@@ -149,13 +160,21 @@ class BaseViewController: UIViewController {
             else
             {
                 _cartBarButtonItem = self.badgeBarButtonItemWithImageNamed(imagedName: "ic_cart",
-                                                                           action: Selector.init(("cartClicked:")))
-//                _cartBarButtonItem?.badgeValue = 
+                                                                           action: #selector(self.cartClicked))
+                _cartBarButtonItem?.badgeValue = "2"
 //                _cartBarButtonItem?.tag =
             }
         }
          return _cartBarButtonItem!
     }
+    
+    @objc func cartClicked(_ sender:UIBarButtonItem){
+        let alert:PMAlertController = PMAlertController(title: "Notice", description: "Open Cart Screen is under construction. You must hire me to continue with this feature", image: nil, style: .alert)
+        
+        alert.addAction(PMAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .default, action: {() in
+        }))
+        
+        self.present(alert, animated: true, completion: nil)    }
     
     func spaceBarButtonItem() -> UIBarButtonItem {
         let item = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -164,10 +183,10 @@ class BaseViewController: UIViewController {
     }
 
     
-    func configureNavigationBar() -> Bool{
+    func configureNavigationBar(){
         if(self.parent == nil || (self.parent?.isKind(of: UINavigationController.self)) == false)
         {
-            return false
+            return
         }
         
         self.navigationItem.backBarButtonItem
@@ -175,7 +194,6 @@ class BaseViewController: UIViewController {
                                    style: .plain,
                                    target: nil,
                                    action: nil)
-        return true
     }
     // MARK: - private instance methods
     func barButtonItemWithImageNamed(imageNamed:NSString, action:Selector) -> UIBarButtonItem {
@@ -205,13 +223,12 @@ class BaseViewController: UIViewController {
     func badgeBarButtonItemWithButton(button:UIButton) -> BBBadgeBarButtonItem {
         let item:BBBadgeBarButtonItem = BBBadgeBarButtonItem.init(customUIButton: button)
         item.style = .plain
-        item.badgeBGColor = UIColor.init(named: "db5a27")
-        item.badgePadding = 4
-        item.badgeOriginX = 12
-        item.badgeOriginY = 4.0
+        item.badgeBGColor = UIColor.init(hex: "f58400")
+        item.badgeOriginX = 15
+//        item.badgeOriginY = 0.5
         item.shouldAnimateBadge = true
         item.shouldHideBadgeAtZero = true
-        item.badgeFont = UIFont.init(name: "HelveticaNeue", size: 11.0)
+        item.badgeFont = UIFont.init(name: "HelveticaNeue", size: 8.0)
         item.badgeTextColor = UIColor.white
         return item
     }

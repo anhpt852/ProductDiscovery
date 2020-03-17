@@ -14,6 +14,8 @@ target 'ProductDiscovery' do
   pod 'PMAlertController'
   pod 'iCarousel', '~> 1.8'
   pod 'BBBadgeBarButtonItem'
+  pod 'IQKeyboardManagerSwift'
+  pod 'CAPSPageMenu'
   target 'ProductDiscoveryTests' do
     inherit! :search_paths
     # Pods for testing

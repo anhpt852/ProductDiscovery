@@ -38,10 +38,8 @@ class ContentViewController: BaseViewController {
         
     }
     
-    override func configureNavigationBar() -> Bool {
-        if !super.configureNavigationBar() {
-            return false
-        }
+    override func configureNavigationBar() {
+        super.configureNavigationBar()
         
         if (self.navigationController?.viewControllers.count)! > 1
         {
@@ -54,8 +52,7 @@ class ContentViewController: BaseViewController {
         }
         
         self.navigationItem.rightBarButtonItems = []
-        
-        return true
+
     }
     
     func addViewControllerInViewWithInsets(_ viewController:BaseViewController?, _ parentView: UIView?, _ insets:UIEdgeInsets){

@@ -14,7 +14,7 @@ class BaseEntity: Mappable {
 
     
     required init?(map: Map) {
-        
+
     }
     
     func mapping(map: Map) {

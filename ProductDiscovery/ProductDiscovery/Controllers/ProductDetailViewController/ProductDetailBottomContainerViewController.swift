@@ -10,6 +10,11 @@ import UIKit
 
 class ProductDetailBottomContainerViewController: InlineViewController {
 
+    @IBOutlet weak var _lbTitle: UILabel!
+    @IBOutlet weak var _vCollection: UICollectionView!
+    
+    var _product: ProductItemEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateData()
@@ -19,14 +24,18 @@ class ProductDetailBottomContainerViewController: InlineViewController {
     override func refreshData() {
         super.refreshData();
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+}
+
+extension ProductDetailBottomContainerViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell.init()
+    }
+    
+    
 }
