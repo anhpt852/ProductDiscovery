@@ -85,8 +85,8 @@ class ProductListExtraEntity: BaseEntity {
 }
 
 class ProductListExtraPriceRangeEntity: BaseEntity {
-    private(set) var maxPrice : NSInteger?
-    private(set) var minPrice: NSInteger?
+    private(set) var maxPrice : Double?
+    private(set) var minPrice: Double?
     
     required init?(map: Map) {
         super.init(map: map)

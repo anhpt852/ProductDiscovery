@@ -16,6 +16,14 @@ class ProductDetailViewController: ContainerViewController {
     @IBOutlet var _vTitle: UIView!
     @IBOutlet weak var _lbProductName: UILabel!
     @IBOutlet weak var _lbProductPrice: UILabel!
+    @IBOutlet weak var _lbTotalPrice: UILabel!
+    @IBOutlet weak var _lbTotalQuantity: UILabel!
+    
+    @IBOutlet weak var _lcBottomViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var _vBottomCart: UIView!
+    
+    var _totalPrice = 0.0
+    var _totalQuantity = 0
     
     var _topVc: ProductDetailTopContainerViewController?
     var _midVc: ProductDetailMidContainerViewController?
@@ -27,6 +35,8 @@ class ProductDetailViewController: ContainerViewController {
         super.viewDidLoad()
         self.fetchData()
         self.configureInlineViewControllers()
+        _vBottomCart.layer.cornerRadius = 8
+        _vBottomCart.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +47,12 @@ class ProductDetailViewController: ContainerViewController {
                     let value = try result.get()
                     if let result = value.result{
                         if let product =  result.product{
+                            if (product.price?.sellPrice) != nil {
+                                self._lcBottomViewHeight.constant = 64
+                            } else {
+                                self._lcBottomViewHeight.constant = 0
+                            }
+                        
                             self._productDetail = product
                             self._topVc?._product = self._productDetail
                             self._midVc?._product = self._productDetail
@@ -63,10 +79,13 @@ class ProductDetailViewController: ContainerViewController {
             
             if let productPrice = _productInfo?.price {
                 if let sellPrice = productPrice.sellPrice {
-                    
-                    _lbProductPrice!.text = String.init(format: "%d", arguments: [sellPrice]);
+                    let formater = NumberFormatter()
+                   formater.groupingSeparator = "."
+                   formater.numberStyle = .decimal
+                          
+                    _lbProductPrice.text = formater.string(from: NSNumber(value: sellPrice))! + " đ";
                 } else {
-                    _lbProductPrice!.text = ""
+                    _lbProductPrice.text = ""
                 }
             }
             
@@ -100,6 +119,36 @@ class ProductDetailViewController: ContainerViewController {
         _bottomVc?.refreshData();
     }
 
+    func updateBottomCartView() -> Void {
+        _lbTotalPrice.attributedText = _totalPrice.formatMoneyNumber()
+        _lbTotalQuantity.text = "\(_totalQuantity)"
+    }
+    @IBAction func addProductFromCart(_ sender: Any) {
+        
+        if let productDetail = _productDetail {
+            if let sellPrice = productDetail.price?.sellPrice {
+                _totalPrice += Double(sellPrice)
+                _totalQuantity +=  1
+                self.updateBottomCartView()
+           }
+           
+       }
+    }
+    
+    @IBAction func removeProductFromCart(_ sender: Any) {
+        if _totalQuantity > 0 {
+            if let productDetail = _productDetail {
+                if let sellPrice = productDetail.price?.sellPrice {
+                    _totalPrice -= Double(sellPrice)
+                    _totalQuantity -= 1
+                    self.updateBottomCartView()
+                }
+                
+            }
+            
+        }
+    }
+    
     // MARK: - ContainerViewController
     override func configureInlineViewControllers() {
         

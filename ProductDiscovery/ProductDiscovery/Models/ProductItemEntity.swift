@@ -49,8 +49,8 @@ class ProductImage: BaseEntity {
 }
 
 class Price: BaseEntity {
-    private(set) var supplierSalePrice: NSInteger?
-    private(set) var sellPrice: NSInteger?
+    private(set) var supplierSalePrice: Double?
+    private(set) var sellPrice: Double?
     
     required init?(map: Map) {
         super.init(map: map)
@@ -66,10 +66,10 @@ class Price: BaseEntity {
 class PromotionPrice: BaseEntity {
     private(set) var channel: String?
     private(set) var terminal: String?
-    private(set) var finalPrice: NSInteger?
-    private(set) var promotionPrice: NSInteger?
-    private(set) var bestPrice: NSInteger?
-    private(set) var flashSalePrice: NSInteger?
+    private(set) var finalPrice: Double?
+    private(set) var promotionPrice: Double?
+    private(set) var bestPrice: Double?
+    private(set) var flashSalePrice: Double?
     
     required init?(map: Map) {
         super.init(map: map)

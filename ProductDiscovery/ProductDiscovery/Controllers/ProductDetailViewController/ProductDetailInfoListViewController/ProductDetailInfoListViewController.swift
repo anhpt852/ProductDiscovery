@@ -8,14 +8,23 @@
 
 import UIKit
 
+@objc protocol ProductDetailInfoListViewControllerDelegate {
+    @objc optional func updateHeight(_ height:CGFloat)
+    
+}
+
 class ProductDetailInfoListViewController: BaseViewController {
 
     @IBOutlet weak var _tableView: UITableView!
-    var delegate: ProductDetailInfoListViewController?
-    
+    @IBOutlet weak var _lcTableViewHeight :NSLayoutConstraint?
     var _productAttributes: [ProductAttributes]?
-    
+    var delegate: ProductDetailInfoListViewControllerDelegate?
     var _numbOfAttributes = 0
+    
+    deinit {
+        _tableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let productAttributes = _productAttributes {
@@ -23,12 +32,31 @@ class ProductDetailInfoListViewController: BaseViewController {
                 self._numbOfAttributes = productAttributes.count
             }
         }
+        _tableView.isScrollEnabled = false
         _tableView.register(UINib(nibName: "ProductInfoTableViewCell", bundle: nil), forCellReuseIdentifier: ProductInfoTableViewCell.cell_identifier())
+        _tableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
     override func refreshData() {
        
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if object as? UITableView == _tableView {
+            if keyPath == "contentSize" {
+                let value = CGFloat(_lcTableViewHeight!.constant) - _tableView.contentSize.height
+                if (Float(abs(value)) < .ulpOfOne) {
+                    return
+                }
+                _lcTableViewHeight?.constant = _tableView.contentSize.height
+                if let updateHeight = delegate?.updateHeight {
+                    updateHeight(_tableView.contentSize.height)
+                }
+                _tableView.layoutIfNeeded()
+            }
+        }
+    }
+
 }
 
 

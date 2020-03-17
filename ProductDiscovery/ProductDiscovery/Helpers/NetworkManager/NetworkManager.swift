@@ -18,7 +18,7 @@ struct APIBaseURL {
 }
 
 struct APIPath {
-    static let search = "search/?channel=pv_showroom&visitorId=&q=&terminal=CP01"
+    static let search = "search/?channel=pv_showroom&visitorId=&terminal=CP01"
     static let detail = "products/{0}?channel=pv_showroom&terminal=CP01"
 }
 
@@ -35,8 +35,11 @@ class NetworkManager: Session {
     
     
     // 1. Get List Product
-    func getListProduct(_ completion: @escaping (_ result:AFResult<ProductListEntity> ) -> Void) {
-        let path = APIBaseURL.API_BASE_URL + APIPath.search
+    func getListProduct(_ page:Int, _ keyword:String, _ completion: @escaping (_ result:AFResult<ProductListEntity> ) -> Void) {
+        var path = APIBaseURL.API_BASE_URL + APIPath.search + "&_page=" + "\(page)"
+        if keyword.count > 0 {
+            path += "&q=" + keyword
+        }
         
         self.requestWithMethod(.get, fullUrl: path, params: nil, completion: completion)
     }

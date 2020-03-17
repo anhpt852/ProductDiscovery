@@ -42,6 +42,12 @@ class ProductDetailTopContainerViewController: InlineViewController {
         _vProductStatus.layer.cornerRadius = 8.0
         _vProductStatus.layer.masksToBounds = true
         
+        self.reloadData()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func reloadData(){
         if let product =  _product {
             if let status =  product.status
                 ,let name =  product.name
@@ -57,22 +63,21 @@ class ProductDetailTopContainerViewController: InlineViewController {
                
                 if let sellPrice = price.sellPrice, let supplierSalePrice = price.supplierSalePrice {
                     
-                    _lbProductPrice.text = String.init(format: "%d", arguments: [sellPrice]);
+                    _lbProductPrice.attributedText = sellPrice.formatMoneyNumber()
                     if sellPrice != supplierSalePrice {
-                        _lbProductOldPrice.text = String.init(format: "%d", arguments: [supplierSalePrice])
+                        _lbProductOldPrice.attributedText = supplierSalePrice.formatMoneyNumber() 
                     }
                 } else {
                     _lbProductPrice.text = "Không có thông tin"
                 }
             }
         }
-        
         self.updateData()
-        // Do any additional setup after loading the view.
     }
     
     override func refreshData() {
         super.refreshData();
+        self.reloadData();
     }
     
     func convertProductStatus(_ statusCode: String) -> String {
