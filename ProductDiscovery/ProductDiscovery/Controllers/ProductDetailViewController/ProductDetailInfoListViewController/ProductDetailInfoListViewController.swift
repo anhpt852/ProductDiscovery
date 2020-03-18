@@ -22,7 +22,10 @@ class ProductDetailInfoListViewController: BaseViewController {
     var _numbOfAttributes = 0
     
     deinit {
-        _tableView.removeObserver(self, forKeyPath: "contentSize")
+        if let tableView = _tableView {
+            tableView.removeObserver(self, forKeyPath: "contentSize")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -49,11 +52,12 @@ class ProductDetailInfoListViewController: BaseViewController {
                     return
                 }
                 _lcTableViewHeight?.constant = _tableView.contentSize.height
+                _tableView.layoutIfNeeded()
+
                 if let updateHeight = delegate?.updateHeight {
                     updateHeight(_tableView.contentSize.height)
                 }
-                _tableView.layoutIfNeeded()
-            }
+                            }
         }
     }
 

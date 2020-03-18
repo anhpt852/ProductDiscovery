@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		182F40F1241FC54000DB2FED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F40F0241FC54000DB2FED /* NetworkManager.swift */; };
+		18828EBC2422750F00563895 /* product_description.html in Resources */ = {isa = PBXBuildFile; fileRef = 18828EBB2422750F00563895 /* product_description.html */; };
+		18828EBE2422757A00563895 /* ProductDetailDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18828EBD2422757A00563895 /* ProductDetailDescriptionViewController.swift */; };
+		18828EC0242276EE00563895 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18828EBF242276EE00563895 /* WebKit.framework */; };
+		18828EC424227F0D00563895 /* ProductDetailPriceCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18828EC324227F0D00563895 /* ProductDetailPriceCompareViewController.swift */; };
 		18B7B92F24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B7B92D24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib */; };
 		18B7B93124211F840037C57B /* ProductListHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7B93024211F840037C57B /* ProductListHorizontalCollectionViewCell.swift */; };
 		18B7B93324213E8B0037C57B /* Double+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7B93224213E8B0037C57B /* Double+Convert.swift */; };
@@ -62,6 +66,10 @@
 
 /* Begin PBXFileReference section */
 		182F40F0241FC54000DB2FED /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18828EBB2422750F00563895 /* product_description.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = product_description.html; sourceTree = "<group>"; };
+		18828EBD2422757A00563895 /* ProductDetailDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionViewController.swift; sourceTree = "<group>"; };
+		18828EBF242276EE00563895 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		18828EC324227F0D00563895 /* ProductDetailPriceCompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPriceCompareViewController.swift; sourceTree = "<group>"; };
 		18B7B92D24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		18B7B93024211F840037C57B /* ProductListHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B7B93224213E8B0037C57B /* Double+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Convert.swift"; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18828EC0242276EE00563895 /* WebKit.framework in Frameworks */,
 				D374EB6A69CC354A399D8671 /* Pods_ProductDiscovery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +160,14 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		18828EBA242274C900563895 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				18828EBB2422750F00563895 /* product_description.html */,
+			);
+			path = DummyData;
+			sourceTree = "<group>";
+		};
 		18B7B92A24211C2A0037C57B /* ProductListHorizontalCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +188,7 @@
 		817505B320C40C2A604BA20C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18828EBF242276EE00563895 /* WebKit.framework */,
 				E16F7EBD0CB30015629FD2B2 /* Pods_ProductDiscovery.framework */,
 				E35B1F114F4489D7C49E3910 /* Pods_ProductDiscoveryTests.framework */,
 			);
@@ -256,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A549C6AA241F87AB006822B5 /* ProductDiscovery-Bridging-Header.h */,
+				18828EBA242274C900563895 /* DummyData */,
 				A536239E2421D48200029DE7 /* Constant */,
 				A53623972421BE7B00029DE7 /* APICache */,
 				A5431C8B2420899B004DC020 /* Lib */,
@@ -328,7 +347,9 @@
 		A5431C992420BB79004DC020 /* ProductDetailInfoListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				18828EC324227F0D00563895 /* ProductDetailPriceCompareViewController.swift */,
 				A5431C9A2420BBC0004DC020 /* ProductDetailInfoListViewController.swift */,
+				18828EBD2422757A00563895 /* ProductDetailDescriptionViewController.swift */,
 			);
 			path = ProductDetailInfoListViewController;
 			sourceTree = "<group>";
@@ -511,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A549C6C0241FA0D4006822B5 /* .gitignore in Resources */,
+				18828EBC2422750F00563895 /* product_description.html in Resources */,
 				A5431C962420AD3F004DC020 /* ProductInfoTableViewCell.xib in Resources */,
 				18B7B92F24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib in Resources */,
 				A5431CA02420C95C004DC020 /* ImageItemCell.xib in Resources */,
@@ -608,6 +630,7 @@
 				A5343E56241F38BE00984DED /* ProductListViewController.swift in Sources */,
 				A549C6B2241F8EBF006822B5 /* ProductDetailMidContainerViewController.swift in Sources */,
 				A5343E79241F39E200984DED /* ProductDetailViewController.swift in Sources */,
+				18828EBE2422757A00563895 /* ProductDetailDescriptionViewController.swift in Sources */,
 				A5343E52241F38BE00984DED /* AppDelegate.swift in Sources */,
 				18B7B93124211F840037C57B /* ProductListHorizontalCollectionViewCell.swift in Sources */,
 				A5431C9E2420C939004DC020 /* ImageItemCell.swift in Sources */,
@@ -619,6 +642,7 @@
 				A5431C8D2420899B004DC020 /* Colours.swift in Sources */,
 				A549C6A5241F829C006822B5 /* InlineViewController.swift in Sources */,
 				A536239B2421D2CD00029DE7 /* APICacheManager.swift in Sources */,
+				18828EC424227F0D00563895 /* ProductDetailPriceCompareViewController.swift in Sources */,
 				A53623992421C05900029DE7 /* CacheAPIData.swift in Sources */,
 				A5343E7D241F3B2E00984DED /* ProductListViewTableViewCell.swift in Sources */,
 				A549C6A2241F7A4B006822B5 /* ContentViewController.swift in Sources */,

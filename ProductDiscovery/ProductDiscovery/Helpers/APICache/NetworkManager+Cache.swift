@@ -80,31 +80,16 @@ extension NetworkManager {
         
         DispatchQueue.global(qos: .default).async(execute: {
             // Store api data
-
-            var apiCache = self.getAPICache(withURL: url, withParam: params, withRawData: data, withMethod: method)
-            do {
-                let realm = try Realm()
-                if let _apiCache = apiCache {
-                    try! realm.write {
-                        realm.delete(_apiCache)
-                    }
-                }
-
-            } catch let error as NSError {
-                print("error - \(error.localizedDescription)")
-            }
             
             do {
                 let realm = try Realm()
-                apiCache = CacheAPIData()
-                apiCache?.url = url
-                apiCache?.method = method?.rawValue
-                apiCache?.param = self.archiveNSData(fromJSON: params, withKey: "param")
-                apiCache?.data = String.init(data: jsonData, encoding: .utf8)
-                if let apiCache = apiCache {
-                    try! realm.write {
-                        realm.add(apiCache, update: .all)
-                    }
+                let apiCache = CacheAPIData()
+                apiCache.url = url
+                apiCache.method = method?.rawValue
+                apiCache.param = self.archiveNSData(fromJSON: params, withKey: "param")
+                apiCache.data = String.init(data: jsonData, encoding: .utf8)
+                try! realm.write {
+                    realm.add(apiCache, update: .all)
                 }
 
             } catch let error as NSError {

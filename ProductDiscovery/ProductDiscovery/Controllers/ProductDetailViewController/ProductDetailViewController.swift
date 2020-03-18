@@ -50,9 +50,6 @@ class ProductDetailViewController: ContainerViewController {
                 }
             
                 self._productDetail = product
-                self._topVc?._product = self._productDetail
-                self._midVc?._product = self._productDetail
-                self._bottomVc?._product = self._productDetail
                 self.refreshData()
             }
         }
@@ -124,6 +121,11 @@ class ProductDetailViewController: ContainerViewController {
     override func refreshData() {
         super.refreshData()
 
+        
+        self._topVc?._product = self._productDetail
+        self._midVc?._product = self._productDetail
+        self._bottomVc?._product = self._productDetail
+        
         _topVc?.refreshData();
         _midVc?.refreshData();
         _bottomVc?.refreshData();
@@ -173,6 +175,7 @@ class ProductDetailViewController: ContainerViewController {
         _midVc = StoryboardManager.mainManager.instantiateViewControllerWithIdentifier(identifier: "detail_product_mid_vc") as? ProductDetailMidContainerViewController
         if let midVc = _midVc {
             midVc.delegate = self;
+            midVc._product = self._productDetail
             self.addInlineViewController(midVc)
         }
        
