@@ -29,20 +29,29 @@ class ProductDetailBottomContainerViewController: InlineViewController {
         super.viewDidLayoutSubviews()
     }
     
+    func handleResponse(_ value: ProductListEntity){
+        if let result = value.result{
+            if let products =  result.products{
+                self.listProducts = products;
+                self._vCollection.reloadData();
+                self.updateData()
+            }
+        }
+    }
+    
     override func fetchData() {
         NetworkManager.sharedManager.getListProduct(1,"",{result in
             do {
                 let value = try result.get()
-                if let result = value.result{
-                    if let products =  result.products{
-                        self.listProducts = products;
-                        self._vCollection.reloadData();
-                        self.updateData()
-                    }
-                }
+                self.handleResponse(value)
             }
             catch{
                 
+            }
+        },cacheCompletion: { error,cache in
+            if(cache != nil){
+                let value = cache as! ProductListEntity
+                self.handleResponse(value)
             }
         })
     }

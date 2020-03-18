@@ -62,27 +62,37 @@ class ProductListViewController: BaseViewController{
         return Color.init(hex: "#ea341f")
     }
     
+    func handleResponse(_ value: ProductListEntity){
+        if let result = value.result, let extra = value.extra{
+            if let products =  result.products {
+                self.listProducts += products;
+                self._tableView.reloadData();
+            }
+            
+            if let totalItems = extra.totalItems {
+                self._totalItems = totalItems
+                self._totalPages = totalItems / 10
+            }
+        }
+    }
+    
     override func fetchData() {
         
         NetworkManager.sharedManager.getListProduct( _currentPage  , _keyword, {result in
             self._loading = false
             do {
                 let value = try result.get()
-                if let result = value.result, let extra = value.extra{
-                    if let products =  result.products {
-                        self.listProducts += products;
-                        self._tableView.reloadData();
-                    }
-                    
-                    if let totalItems = extra.totalItems {
-                        self._totalItems = totalItems
-                        self._totalPages = totalItems / 10
-                    }
-                }
+                self.handleResponse(value)
             }
             catch{
                 
             }
+        },cacheCompletion: { error, cache in
+            if(cache != nil){
+                let value = cache as! ProductListEntity
+                self.handleResponse(value)
+            }
+            
         })
     }
     

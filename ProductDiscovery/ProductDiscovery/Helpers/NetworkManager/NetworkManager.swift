@@ -35,25 +35,51 @@ class NetworkManager: Session {
     
     
     // 1. Get List Product
-    func getListProduct(_ page:Int, _ keyword:String, _ completion: @escaping (_ result:AFResult<ProductListEntity> ) -> Void) {
+    func getListProduct(_ page:Int, _ keyword:String, _
+                        completion: @escaping (_ result:AFResult<ProductListEntity> ) -> Void,
+                        cacheCompletion:@escaping (_ error: Error?, _ response: Any?) -> Void) {
         var path = APIBaseURL.API_BASE_URL + APIPath.search + "&_page=" + "\(page)"
         if keyword.count > 0 {
             path += "&q=" + keyword
         }
         
-        self.requestWithMethod(.get, fullUrl: path, params: nil, completion: completion)
+        self.startRequest(withURL: path, withParam: nil, rawData: nil, class: ProductListEntity.self, withMethod: .get, withCache: true, withCacheOnly: false, onComplete: completion, cacheCompletion:cacheCompletion)
+//        self.requestWithMethod(.get, fullUrl: path, params: nil, completion: completion)
     }
     
     // 1. Get Product Detail
-    func getDetailProduct(_ sku: String, _ completion: @escaping (_ result:AFResult<ProductDetailEntity> ) -> Void) {
+    func getDetailProduct(_ sku: String, _
+                            completion: @escaping (_ result:AFResult<ProductDetailEntity> ) -> Void,
+                            cacheCompletion:@escaping (_ error: Error?, _ response: Any?) -> Void) {
         let path = APIBaseURL.API_BASE_URL + APIPath.detail.replacingOccurrences(of: "{0}", with: sku)
         
-        self.requestWithMethod(.get, fullUrl: path, params: nil, completion: completion)
+        self.startRequest(withURL: path, withParam: nil, rawData: nil, class: ProductDetailEntity.self, withMethod: .get, withCache: true, withCacheOnly: false, onComplete: completion, cacheCompletion:cacheCompletion)
+//        self.requestWithMethod(.get, fullUrl: path, params: nil, completion: completion)
     }
 
     
+    
     // MARK: Private
+    func startRequest<T:BaseEntity>(withURL url: String,
+                      withParam params: [String : AnyObject]?,
+                      rawData data: Any?,
+                      class clazz: AnyClass,
+                      withMethod method: HTTPMethod,
+                      withCache cacheEnable: Bool,
+                      withCacheOnly cacheOnly: Bool,
+                      onComplete completion: @escaping (_ result: AFResult<T>) -> Void,
+                      cacheCompletion:@escaping (_ error: Error?, _ response: Any?) -> Void)
+    {
+        self.getAPICache(withURL: url, withParam: params, rawData: nil, class: clazz, withMethod: method, withCacheEnable: true, withCacheOnlyOption: false) { (error, rep) in
+            cacheCompletion(error,rep)
+            self.requestWithMethod(method, fullUrl: url, params: params, encoding: Alamofire.URLEncoding.default, completion: completion)
+        }
+        
+        
+    }
+    
     fileprivate func requestWithMethod<T:BaseEntity>(_ method: HTTPMethod, fullUrl: String, params: [String : AnyObject]?, completion: @escaping (_ result: AFResult<T>) -> Void) {
+        
         
         self.requestWithMethod(method, fullUrl: fullUrl, params: params, encoding: Alamofire.URLEncoding.default, completion: completion)
     }
@@ -72,8 +98,16 @@ class NetworkManager: Session {
                 .responseObject(completionHandler: { (response: AFDataResponse<T>) in
                     switch response.result {
                     case .success(let value):
-                       completion(response.result) // Return result only
-                       debugPrint(value)
+                        do {
+                            let tmpValue = try response.result.get()
+                            self.saveApiCacheInThread(withDictionary: tmpValue.toJSON() as [String : AnyObject], withParam: params, withRawData: nil, withURL: fullUrl, withMethod: .get)
+                            completion(response.result) // Return result only
+                            debugPrint(value)
+                        }
+                        catch let error as NSError {
+                            print("error - \(error.localizedDescription)")
+                        }
+
                         break
                     case .failure(let error):
                         debugPrint("HTTP request error \(String(describing: error.localizedDescription))")

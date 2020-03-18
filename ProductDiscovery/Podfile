@@ -16,6 +16,7 @@ target 'ProductDiscovery' do
   pod 'BBBadgeBarButtonItem'
   pod 'IQKeyboardManagerSwift'
   pod 'CAPSPageMenu'
+  pod 'RealmSwift'
   target 'ProductDiscoveryTests' do
     inherit! :search_paths
     # Pods for testing

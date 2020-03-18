@@ -40,29 +40,39 @@ class ProductDetailViewController: ContainerViewController {
         // Do any additional setup after loading the view.
     }
     
+    func handleResponse(_ value: ProductDetailEntity){
+        if let result = value.result{
+            if let product =  result.product{
+                if (product.price?.sellPrice) != nil {
+                    self._lcBottomViewHeight.constant = 64
+                } else {
+                    self._lcBottomViewHeight.constant = 0
+                }
+            
+                self._productDetail = product
+                self._topVc?._product = self._productDetail
+                self._midVc?._product = self._productDetail
+                self._bottomVc?._product = self._productDetail
+                self.refreshData()
+            }
+        }
+    }
+    
+    
     override func fetchData() {
         if let sku =  _productInfo!.sku{
             NetworkManager.sharedManager.getDetailProduct(sku, {result in
                 do {
                     let value = try result.get()
-                    if let result = value.result{
-                        if let product =  result.product{
-                            if (product.price?.sellPrice) != nil {
-                                self._lcBottomViewHeight.constant = 64
-                            } else {
-                                self._lcBottomViewHeight.constant = 0
-                            }
-                        
-                            self._productDetail = product
-                            self._topVc?._product = self._productDetail
-                            self._midVc?._product = self._productDetail
-                            self._bottomVc?._product = self._productDetail
-                            self.refreshData()
-                        }
-                    }
+                    self.handleResponse(value)
                 }
                 catch{
                     
+                }
+            },cacheCompletion: {error, cache in
+                if(cache != nil){
+                    let value = cache as! ProductDetailEntity
+                    self.handleResponse(value)
                 }
             })
         }
