@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sBA-Ed-AK7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +16,7 @@
         <!--Product List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="list_product_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ProductListViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list_product_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ProductListViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--Product Detail View Controller-->
         <scene sceneID="1tY-Rs-Luk">
             <objects>
-                <viewController storyboardIdentifier="detail_product_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p87-NV-n1r" customClass="ProductDetailViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_product_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p87-NV-n1r" customClass="ProductDetailViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w4v-4N-Jza"/>
                         <viewControllerLayoutGuide type="bottom" id="p0M-Or-PaK"/>
@@ -134,10 +134,10 @@
                                 <rect key="frame" x="0.0" y="798" width="414" height="64"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-4X-55f">
-                                        <rect key="frame" x="8" y="8" width="130" height="48"/>
+                                        <rect key="frame" x="8" y="8" width="130" height="72"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ow9-Vf-MVs">
-                                                <rect key="frame" x="6" y="12" width="24" height="24"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ow9-Vf-MVs">
+                                                <rect key="frame" x="6" y="24" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="IDd-R9-vu6"/>
                                                     <constraint firstAttribute="width" secondItem="ow9-Vf-MVs" secondAttribute="height" multiplier="1:1" priority="750" id="Viq-tH-dCq"/>
@@ -147,14 +147,14 @@
                                                     <action selector="removeProductFromCart:" destination="p87-NV-n1r" eventType="touchUpInside" id="VmT-tj-pw6"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6a-xb-Y20">
-                                                <rect key="frame" x="38" y="12" width="52" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6a-xb-Y20">
+                                                <rect key="frame" x="38" y="12" width="52" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slo-Dv-ND6">
-                                                <rect key="frame" x="98" y="12" width="24" height="24"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slo-Dv-ND6">
+                                                <rect key="frame" x="98" y="24" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="slo-Dv-ND6" secondAttribute="height" multiplier="1:1" priority="750" id="9K9-a3-Mfs"/>
                                                     <constraint firstAttribute="height" constant="24" id="Hbz-gl-m5O"/>
@@ -179,16 +179,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZ1-O1-H52">
-                                        <rect key="frame" x="146" y="8" width="260" height="48"/>
+                                        <rect key="frame" x="146" y="8" width="260" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2v-mr-gJi">
-                                                <rect key="frame" x="221" y="12" width="23" height="24"/>
+                                                <rect key="frame" x="221" y="12" width="23" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cart_white" translatesAutoresizingMaskIntoConstraints="NO" id="nHf-RJ-BLp">
-                                                <rect key="frame" x="16" y="12" width="24" height="24"/>
+                                                <rect key="frame" x="16" y="12" width="48" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="nHf-RJ-BLp" secondAttribute="height" multiplier="1:1" priority="750" id="PIs-4F-9uY"/>
                                                 </constraints>
@@ -285,7 +285,7 @@
         <!--Data Source-->
         <scene sceneID="FgD-M7-RA7">
             <objects>
-                <viewController storyboardIdentifier="detail_product_top_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nSe-8z-Y4v" customClass="ProductDetailTopContainerViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_product_top_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nSe-8z-Y4v" customClass="ProductDetailTopContainerViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xW-hG-AZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,15 +379,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tag" translatesAutoresizingMaskIntoConstraints="NO" id="73K-pC-9qh">
-                                                <rect key="frame" x="8" y="0.0" width="40" height="20"/>
+                                                <rect key="frame" x="16" y="0.0" width="40" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="73K-pC-9qh" secondAttribute="height" multiplier="2:1" id="Utg-oa-iQi"/>
                                                     <constraint firstAttribute="height" constant="20" id="vGy-0P-9XB"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN4-Jl-6BB">
-                                                <rect key="frame" x="8" y="0.0" width="37" height="20"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="9"/>
+                                                <rect key="frame" x="16" y="0.0" width="37" height="20"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -406,7 +406,7 @@
                                             <constraint firstItem="73K-pC-9qh" firstAttribute="top" secondItem="dcw-iz-ZsN" secondAttribute="top" id="efl-pi-N24"/>
                                             <constraint firstItem="kN4-Jl-6BB" firstAttribute="bottom" secondItem="73K-pC-9qh" secondAttribute="bottom" id="mMN-8c-499"/>
                                             <constraint firstItem="kN4-Jl-6BB" firstAttribute="leading" secondItem="73K-pC-9qh" secondAttribute="leading" id="pfu-y6-9xk"/>
-                                            <constraint firstItem="73K-pC-9qh" firstAttribute="leading" secondItem="Jyr-Te-3SC" secondAttribute="trailing" id="tE6-Yl-zQM"/>
+                                            <constraint firstItem="73K-pC-9qh" firstAttribute="leading" secondItem="Jyr-Te-3SC" secondAttribute="trailing" constant="8" id="tE6-Yl-zQM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -471,7 +471,7 @@
         <!--Product Detail Info List View Controller-->
         <scene sceneID="hio-Ig-p6G">
             <objects>
-                <viewController storyboardIdentifier="list_detail_info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YPc-qg-6SG" customClass="ProductDetailInfoListViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list_detail_info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YPc-qg-6SG" customClass="ProductDetailInfoListViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tJX-je-Gcs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -509,7 +509,7 @@
         <!--Product Detail Mid Container View Controller-->
         <scene sceneID="45E-xc-Mks">
             <objects>
-                <viewController storyboardIdentifier="detail_product_mid_vc" id="dlX-yI-Nxe" customClass="ProductDetailMidContainerViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_product_mid_vc" id="dlX-yI-Nxe" customClass="ProductDetailMidContainerViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTa-Jb-rzY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +559,7 @@
         <!--Product Detail Bottom Container View Controller-->
         <scene sceneID="PDS-LB-de2">
             <objects>
-                <viewController storyboardIdentifier="detail_product_bottom_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oi7-IN-0o8" customClass="ProductDetailBottomContainerViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_product_bottom_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oi7-IN-0o8" customClass="ProductDetailBottomContainerViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tSd-6N-fsq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,7 +623,7 @@
         <!--Main Navigation View Controller-->
         <scene sceneID="Cg6-RT-LUh">
             <objects>
-                <navigationController storyboardIdentifier="main_navigation_controllerr" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBA-Ed-AK7" customClass="MainNavigationViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="main_navigation_controllerr" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBA-Ed-AK7" customClass="MainNavigationViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1tA-Jc-cXg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -641,7 +641,7 @@
         <!--Product Detail Description View Controller-->
         <scene sceneID="OcE-4s-ZH0">
             <objects>
-                <viewController storyboardIdentifier="detail_mid_description" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cuE-5i-WxZ" customClass="ProductDetailDescriptionViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_mid_description" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cuE-5i-WxZ" customClass="ProductDetailDescriptionViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hA6-t7-emt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -679,7 +679,7 @@
         <!--Product Detail Price Compare View Controller-->
         <scene sceneID="hlN-If-hlm">
             <objects>
-                <viewController storyboardIdentifier="detail_mid_price_compare" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUr-5D-ePg" customClass="ProductDetailPriceCompareViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail_mid_price_compare" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUr-5D-ePg" customClass="ProductDetailPriceCompareViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="byf-mw-dhE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -731,7 +731,7 @@
         <!--Error Internet View Controller-->
         <scene sceneID="UtK-Xp-ILw">
             <objects>
-                <viewController storyboardIdentifier="error_internet_view_controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qFD-CP-kz3" customClass="ErrorInternetViewController" customModule="ProductDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="error_internet_view_controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qFD-CP-kz3" customClass="ErrorInternetViewController" customModule="Khám_phá_sản_phẩm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="em7-u7-ZXc"/>
                         <viewControllerLayoutGuide type="bottom" id="mP5-Ef-HYw"/>
