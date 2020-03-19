@@ -3,8 +3,8 @@
 
 target 'ProductDiscovery' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
+#  use_frameworks!
+use_modular_headers!
   # Pods for ProductDiscovery
 	pod 'SDWebImage'
 	pod 'FormatterKit'
@@ -17,6 +17,7 @@ target 'ProductDiscovery' do
   pod 'IQKeyboardManagerSwift'
   pod 'CAPSPageMenu'
   pod 'RealmSwift'
+  pod "SkeletonView"
   target 'ProductDiscoveryTests' do
     inherit! :search_paths
     # Pods for testing

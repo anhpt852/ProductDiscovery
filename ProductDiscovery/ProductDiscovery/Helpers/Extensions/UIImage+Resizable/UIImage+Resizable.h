@@ -1,10 +1,11 @@
 //
-//  UIImage+BNC.h
-//  webbnc
+//  APICacheManager.swift
+//  ProductDiscovery
 //
-//  Created by Pham Duc Giam on 09/09/14.
-//  Copyright (c) 2014 BNC. All rights reserved.
+//  Created by Phan Tuan Anh on 3/18/20.
+//  Copyright © 2020 anhpt. All rights reserved.
 //
+
 
 #import <UIKit/UIKit.h>
 

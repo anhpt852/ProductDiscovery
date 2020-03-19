@@ -31,6 +31,7 @@ class ProductDetailViewController: ContainerViewController {
     
     var _productInfo: ProductItemEntity?
     var _productDetail: ProductItemEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchData()
@@ -41,15 +42,17 @@ class ProductDetailViewController: ContainerViewController {
     }
     
     func handleResponse(_ value: ProductDetailEntity){
+        MBProgressHUD.hide(for: view, animated: true)
         if let result = value.result{
             if let product =  result.product{
-                if (product.price?.sellPrice) != nil {
+                if (product.price?.sellPrice) != nil || (product.status?.sale != "ngung_kinh_doanh"){
                     self._lcBottomViewHeight.constant = 64
                 } else {
                     self._lcBottomViewHeight.constant = 0
                 }
             
                 self._productDetail = product
+                self._productDetail?.images = _productInfo?.images
                 self.refreshData()
             }
         }
@@ -58,6 +61,7 @@ class ProductDetailViewController: ContainerViewController {
     
     override func fetchData() {
         if let sku =  _productInfo!.sku{
+            MBProgressHUD.showAdded(to: view, animated: true)
             NetworkManager.sharedManager.getDetailProduct(sku, {result in
                 do {
                     let value = try result.get()

@@ -1,10 +1,11 @@
 //
-//  StoryboardManager.swift
-//  Vatgia-iOS-For-Merchant
+//  APICacheManager.swift
+//  ProductDiscovery
 //
-//  Created by Phan Tuan Anh on 11/10/16.
-//  Copyright © 2016 Tuan Anh Phan. All rights reserved.
+//  Created by Phan Tuan Anh on 3/18/20.
+//  Copyright © 2020 anhpt. All rights reserved.
 //
+
 
 import UIKit
 

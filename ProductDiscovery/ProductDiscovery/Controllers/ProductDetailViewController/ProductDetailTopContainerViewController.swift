@@ -17,7 +17,9 @@ class ProductDetailTopContainerViewController: InlineViewController {
     @IBOutlet weak var _lbProductStatus: UILabel!
     @IBOutlet weak var _lbProductPrice: UILabel!
     @IBOutlet weak var _lbProductOldPrice: UILabel!
+    @IBOutlet weak var _lbDiscountPercent: UILabel!
     @IBOutlet weak var _pageController: UIPageControl!
+    @IBOutlet weak var _ivTag: UIImageView!
     
     var _numOfImages = 0
     var _product: ProductItemEntity?
@@ -65,9 +67,18 @@ class ProductDetailTopContainerViewController: InlineViewController {
                     
                     _lbProductPrice.attributedText = sellPrice.formatMoneyNumber()
                     if sellPrice != supplierSalePrice {
-                        _lbProductOldPrice.attributedText = supplierSalePrice.formatMoneyNumber() 
+                        let attributeString: NSMutableAttributedString =  supplierSalePrice.formatMoneyNumber()
+                        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+                        _lbProductOldPrice.attributedText = attributeString
+                        
+                        let discount = (supplierSalePrice/sellPrice) * 100
+                        _lbDiscountPercent.text = String.init(format: "-%.f", discount)+"% "
+                        _ivTag.isHidden =  false
+                    } else {
+                        _ivTag.isHidden = true
                     }
                 } else {
+                    _ivTag.isHidden = true
                     _lbProductPrice.text = "Không có thông tin"
                 }
             }

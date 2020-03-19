@@ -15,10 +15,16 @@
 		18B7B92F24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B7B92D24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib */; };
 		18B7B93124211F840037C57B /* ProductListHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7B93024211F840037C57B /* ProductListHorizontalCollectionViewCell.swift */; };
 		18B7B93324213E8B0037C57B /* Double+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7B93224213E8B0037C57B /* Double+Convert.swift */; };
-		222F5F006E4415EAC5A84DFE /* Pods_ProductDiscoveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35B1F114F4489D7C49E3910 /* Pods_ProductDiscoveryTests.framework */; };
+		8A47A9A02A8C32B66DAAB770 /* libPods-ProductDiscoveryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D15A973A66FE9D90208282F /* libPods-ProductDiscoveryTests.a */; };
+		94E6D0E8251944F146CEB5D7 /* libPods-ProductDiscovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9655A6D6573359F440F7FA8 /* libPods-ProductDiscovery.a */; };
+		A50F2C2B2423119E00FB1E95 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F2C2A2423119E00FB1E95 /* MainNavigationViewController.swift */; };
+		A50F2C2D242316B500FB1E95 /* ErrorInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F2C2C242316B500FB1E95 /* ErrorInternetViewController.swift */; };
+		A50F2C322423410D00FB1E95 /* SkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F2C302423410D00FB1E95 /* SkeletonTableViewCell.swift */; };
+		A50F2C332423410D00FB1E95 /* SkeletonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50F2C312423410D00FB1E95 /* SkeletonTableViewCell.xib */; };
+		A50F2C3624235C6600FB1E95 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F2C3524235C6500FB1E95 /* ProductListViewController.swift */; };
+		A50F2C382423867A00FB1E95 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A50F2C372423867A00FB1E95 /* README.md */; };
 		A5343E52241F38BE00984DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5343E51241F38BE00984DED /* AppDelegate.swift */; };
 		A5343E54241F38BE00984DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5343E53241F38BE00984DED /* SceneDelegate.swift */; };
-		A5343E56241F38BE00984DED /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5343E55241F38BE00984DED /* ProductListViewController.swift */; };
 		A5343E59241F38BE00984DED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5343E57241F38BE00984DED /* Main.storyboard */; };
 		A5343E5B241F38C000984DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5343E5A241F38C000984DED /* Assets.xcassets */; };
 		A5343E5E241F38C000984DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5343E5C241F38C000984DED /* LaunchScreen.storyboard */; };
@@ -51,7 +57,6 @@
 		A549C6B9241F91D0006822B5 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549C6B8241F91D0006822B5 /* StoryboardManager.swift */; };
 		A549C6BE241F9EC4006822B5 /* UIView+Constraints.m in Sources */ = {isa = PBXBuildFile; fileRef = A549C6BD241F9EC4006822B5 /* UIView+Constraints.m */; };
 		A549C6C0241FA0D4006822B5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A549C6BF241FA0D4006822B5 /* .gitignore */; };
-		D374EB6A69CC354A399D8671 /* Pods_ProductDiscovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16F7EBD0CB30015629FD2B2 /* Pods_ProductDiscovery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +78,18 @@
 		18B7B92D24211C630037C57B /* ProductListHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		18B7B93024211F840037C57B /* ProductListHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B7B93224213E8B0037C57B /* Double+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Convert.swift"; sourceTree = "<group>"; };
+		2D15A973A66FE9D90208282F /* libPods-ProductDiscoveryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProductDiscoveryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E322B7240EE98EA9CF20F7F /* Pods-ProductDiscoveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscoveryTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductDiscoveryTests/Pods-ProductDiscoveryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EC292BB2AA7597BEC054DB7 /* Pods-ProductDiscovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscovery.release.xcconfig"; path = "Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery.release.xcconfig"; sourceTree = "<group>"; };
-		A5343E4E241F38BE00984DED /* ProductDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50F2C2A2423119E00FB1E95 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		A50F2C2C242316B500FB1E95 /* ErrorInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInternetViewController.swift; sourceTree = "<group>"; };
+		A50F2C302423410D00FB1E95 /* SkeletonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewCell.swift; sourceTree = "<group>"; };
+		A50F2C312423410D00FB1E95 /* SkeletonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkeletonTableViewCell.xib; sourceTree = "<group>"; };
+		A50F2C3524235C6500FB1E95 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		A50F2C372423867A00FB1E95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A5343E4E241F38BE00984DED /* Khám phá sản phẩm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Khám phá sản phẩm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5343E51241F38BE00984DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5343E53241F38BE00984DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5343E55241F38BE00984DED /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		A5343E58241F38BE00984DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5343E5A241F38C000984DED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5343E5D241F38C000984DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,9 +129,8 @@
 		A549C6BD241F9EC4006822B5 /* UIView+Constraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraints.m"; sourceTree = "<group>"; };
 		A549C6BF241FA0D4006822B5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B9AD3345AA2BE84587C62986 /* Pods-ProductDiscoveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscoveryTests.release.xcconfig"; path = "Target Support Files/Pods-ProductDiscoveryTests/Pods-ProductDiscoveryTests.release.xcconfig"; sourceTree = "<group>"; };
-		E16F7EBD0CB30015629FD2B2 /* Pods_ProductDiscovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductDiscovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E35B1F114F4489D7C49E3910 /* Pods_ProductDiscoveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductDiscoveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A41F96EBD58F3B93ECCDBE /* Pods-ProductDiscovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductDiscovery.debug.xcconfig"; path = "Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery.debug.xcconfig"; sourceTree = "<group>"; };
+		F9655A6D6573359F440F7FA8 /* libPods-ProductDiscovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProductDiscovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18828EC0242276EE00563895 /* WebKit.framework in Frameworks */,
-				D374EB6A69CC354A399D8671 /* Pods_ProductDiscovery.framework in Frameworks */,
+				94E6D0E8251944F146CEB5D7 /* libPods-ProductDiscovery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222F5F006E4415EAC5A84DFE /* Pods_ProductDiscoveryTests.framework in Frameworks */,
+				8A47A9A02A8C32B66DAAB770 /* libPods-ProductDiscoveryTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,15 +199,33 @@
 			isa = PBXGroup;
 			children = (
 				18828EBF242276EE00563895 /* WebKit.framework */,
-				E16F7EBD0CB30015629FD2B2 /* Pods_ProductDiscovery.framework */,
-				E35B1F114F4489D7C49E3910 /* Pods_ProductDiscoveryTests.framework */,
+				F9655A6D6573359F440F7FA8 /* libPods-ProductDiscovery.a */,
+				2D15A973A66FE9D90208282F /* libPods-ProductDiscoveryTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A50F2C2F242340E600FB1E95 /* SkeletonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A50F2C302423410D00FB1E95 /* SkeletonTableViewCell.swift */,
+				A50F2C312423410D00FB1E95 /* SkeletonTableViewCell.xib */,
+			);
+			path = SkeletonTableViewCell;
+			sourceTree = "<group>";
+		};
+		A50F2C342423422200FB1E95 /* ProductListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A50F2C3524235C6500FB1E95 /* ProductListViewController.swift */,
+			);
+			path = ProductListViewController;
 			sourceTree = "<group>";
 		};
 		A5343E45241F38BE00984DED = {
 			isa = PBXGroup;
 			children = (
+				A50F2C372423867A00FB1E95 /* README.md */,
 				A549C6BF241FA0D4006822B5 /* .gitignore */,
 				A5343E50241F38BE00984DED /* ProductDiscovery */,
 				A5343E67241F38C000984DED /* ProductDiscoveryTests */,
@@ -209,7 +237,7 @@
 		A5343E4F241F38BE00984DED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5343E4E241F38BE00984DED /* ProductDiscovery.app */,
+				A5343E4E241F38BE00984DED /* Khám phá sản phẩm.app */,
 				A5343E64241F38C000984DED /* ProductDiscoveryTests.xctest */,
 			);
 			name = Products;
@@ -241,6 +269,7 @@
 		A5343E73241F395B00984DED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A50F2C2F242340E600FB1E95 /* SkeletonTableViewCell */,
 				18B7B92A24211C2A0037C57B /* ProductListHorizontalCollectionViewCell */,
 				A5431C9C2420C908004DC020 /* ImageItemCell */,
 				A5431C922420AD14004DC020 /* ProductInfoTableViewCell */,
@@ -263,9 +292,9 @@
 		A5343E75241F397600984DED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A50F2C342423422200FB1E95 /* ProductListViewController */,
 				A549C6A6241F8561006822B5 /* ProductDetailViewController */,
 				A549C6A3241F8266006822B5 /* CommonViewController */,
-				A5343E55241F38BE00984DED /* ProductListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -344,14 +373,14 @@
 			path = ProductInfoTableViewCell;
 			sourceTree = "<group>";
 		};
-		A5431C992420BB79004DC020 /* ProductDetailInfoListViewController */ = {
+		A5431C992420BB79004DC020 /* ProductDetailMidPageViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18828EC324227F0D00563895 /* ProductDetailPriceCompareViewController.swift */,
 				A5431C9A2420BBC0004DC020 /* ProductDetailInfoListViewController.swift */,
 				18828EBD2422757A00563895 /* ProductDetailDescriptionViewController.swift */,
 			);
-			path = ProductDetailInfoListViewController;
+			path = ProductDetailMidPageViewController;
 			sourceTree = "<group>";
 		};
 		A5431C9C2420C908004DC020 /* ImageItemCell */ = {
@@ -370,6 +399,8 @@
 				A549C69D241F7A4B006822B5 /* ContainerViewController.swift */,
 				A549C69F241F7A4B006822B5 /* ContentViewController.swift */,
 				A549C6A4241F829C006822B5 /* InlineViewController.swift */,
+				A50F2C2A2423119E00FB1E95 /* MainNavigationViewController.swift */,
+				A50F2C2C242316B500FB1E95 /* ErrorInternetViewController.swift */,
 			);
 			path = CommonViewController;
 			sourceTree = "<group>";
@@ -377,7 +408,7 @@
 		A549C6A6241F8561006822B5 /* ProductDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A5431C992420BB79004DC020 /* ProductDetailInfoListViewController */,
+				A5431C992420BB79004DC020 /* ProductDetailMidPageViewController */,
 				A5343E78241F39E200984DED /* ProductDetailViewController.swift */,
 				A549C6B1241F8EBF006822B5 /* ProductDetailMidContainerViewController.swift */,
 				A549C6B3241F8EE5006822B5 /* ProductDetailTopContainerViewController.swift */,
@@ -458,7 +489,7 @@
 				A5343E4A241F38BE00984DED /* Sources */,
 				A5343E4B241F38BE00984DED /* Frameworks */,
 				A5343E4C241F38BE00984DED /* Resources */,
-				3AF047FE17E0DC12CE1C3E9E /* [CP] Embed Pods Frameworks */,
+				25554A4AC1EC351CC9916DF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,7 +497,7 @@
 			);
 			name = ProductDiscovery;
 			productName = ProductDiscovery;
-			productReference = A5343E4E241F38BE00984DED /* ProductDiscovery.app */;
+			productReference = A5343E4E241F38BE00984DED /* Khám phá sản phẩm.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A5343E63241F38C000984DED /* ProductDiscoveryTests */ = {
@@ -531,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50F2C332423410D00FB1E95 /* SkeletonTableViewCell.xib in Resources */,
 				A549C6C0241FA0D4006822B5 /* .gitignore in Resources */,
 				18828EBC2422750F00563895 /* product_description.html in Resources */,
 				A5431C962420AD3F004DC020 /* ProductInfoTableViewCell.xib in Resources */,
@@ -539,6 +571,7 @@
 				A5343E7E241F3B2E00984DED /* ProductListViewTableViewCell.xib in Resources */,
 				A5343E5E241F38C000984DED /* LaunchScreen.storyboard in Resources */,
 				A5343E5B241F38C000984DED /* Assets.xcassets in Resources */,
+				A50F2C382423867A00FB1E95 /* README.md in Resources */,
 				A5343E59241F38BE00984DED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,21 +586,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3AF047FE17E0DC12CE1C3E9E /* [CP] Embed Pods Frameworks */ = {
+		25554A4AC1EC351CC9916DF8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProductDiscovery/Pods-ProductDiscovery-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8DD43AF8DB463BC3162953CE /* [CP] Check Pods Manifest.lock */ = {
@@ -623,16 +656,19 @@
 			files = (
 				182F40F1241FC54000DB2FED /* NetworkManager.swift in Sources */,
 				A549C6B4241F8EE5006822B5 /* ProductDetailTopContainerViewController.swift in Sources */,
+				A50F2C3624235C6600FB1E95 /* ProductListViewController.swift in Sources */,
 				A5431C9B2420BBC0004DC020 /* ProductDetailInfoListViewController.swift in Sources */,
 				A549C698241F69D8006822B5 /* ProductListEntity.swift in Sources */,
+				A50F2C322423410D00FB1E95 /* SkeletonTableViewCell.swift in Sources */,
 				A536239D2421D2F400029DE7 /* NetworkManager+Cache.swift in Sources */,
 				A53623A02421D49900029DE7 /* Constants.swift in Sources */,
-				A5343E56241F38BE00984DED /* ProductListViewController.swift in Sources */,
 				A549C6B2241F8EBF006822B5 /* ProductDetailMidContainerViewController.swift in Sources */,
 				A5343E79241F39E200984DED /* ProductDetailViewController.swift in Sources */,
 				18828EBE2422757A00563895 /* ProductDetailDescriptionViewController.swift in Sources */,
 				A5343E52241F38BE00984DED /* AppDelegate.swift in Sources */,
 				18B7B93124211F840037C57B /* ProductListHorizontalCollectionViewCell.swift in Sources */,
+				A50F2C2D242316B500FB1E95 /* ErrorInternetViewController.swift in Sources */,
+				A50F2C2B2423119E00FB1E95 /* MainNavigationViewController.swift in Sources */,
 				A5431C9E2420C939004DC020 /* ImageItemCell.swift in Sources */,
 				A549C6B6241F8EF8006822B5 /* ProductDetailBottomContainerViewController.swift in Sources */,
 				A549C69A241F69F3006822B5 /* BaseEntity.swift in Sources */,
@@ -821,7 +857,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.anhpt.ProductDiscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Khám phá sản phẩm";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProductDiscovery/Helpers/ProductDiscovery-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -841,7 +877,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.anhpt.ProductDiscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Khám phá sản phẩm";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProductDiscovery/Helpers/ProductDiscovery-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

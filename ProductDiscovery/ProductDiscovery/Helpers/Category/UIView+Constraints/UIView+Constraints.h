@@ -1,9 +1,9 @@
 //
-//  UIView+Constraints.h
-//  vatgia
+//  APICacheManager.swift
+//  ProductDiscovery
 //
-//  Created by Pham Duc Giam on 03/03/16.
-//  Copyright © 2016 maGicuD. All rights reserved.
+//  Created by Phan Tuan Anh on 3/18/20.
+//  Copyright © 2020 anhpt. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
