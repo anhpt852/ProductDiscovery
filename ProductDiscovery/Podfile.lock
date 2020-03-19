@@ -4,6 +4,7 @@ PODS:
     - Alamofire (= 5.0.0-rc.2)
     - ObjectMapper (~> 3.5.1)
   - BBBadgeBarButtonItem (1.2)
+  - CAPSPageMenu (1.0.0)
   - FormatterKit (1.9.0):
     - FormatterKit/AddressFormatter (= 1.9.0)
     - FormatterKit/ArrayFormatter (= 1.9.0)
@@ -35,46 +36,67 @@ PODS:
   - FormatterKit/URLRequestFormatter (1.9.0):
     - FormatterKit/Resources
   - iCarousel (1.8.3)
+  - IQKeyboardManagerSwift (6.5.5)
   - MBProgressHUD (1.2.0)
   - ObjectMapper (3.5.2)
   - PMAlertController (4.0.0)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
   - SDWebImage (5.6.1):
     - SDWebImage/Core (= 5.6.1)
   - SDWebImage/Core (5.6.1)
+  - SkeletonView (1.8.6)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - BBBadgeBarButtonItem
+  - CAPSPageMenu
   - FormatterKit
   - iCarousel (~> 1.8)
+  - IQKeyboardManagerSwift
   - MBProgressHUD
   - PMAlertController
+  - RealmSwift
   - SDWebImage
+  - SkeletonView
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
     - BBBadgeBarButtonItem
+    - CAPSPageMenu
     - FormatterKit
     - iCarousel
+    - IQKeyboardManagerSwift
     - MBProgressHUD
     - ObjectMapper
     - PMAlertController
+    - Realm
+    - RealmSwift
     - SDWebImage
+    - SkeletonView
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
+  CAPSPageMenu: ae022598eeb48dd512ee6d69a33e866a1e6ec166
   FormatterKit: 184db51bf120b633693a73624a4cede89ec51a41
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SkeletonView: 0bf463145522c0c551b76a829b397e2a15a16d46
 
-PODFILE CHECKSUM: bbaf5c4ab3171d2e7b984460fcd586c6d71c036b
+PODFILE CHECKSUM: 872f12c52e18292c9d43ea3455f176c0bf95a172
 
 COCOAPODS: 1.8.3
