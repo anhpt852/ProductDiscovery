@@ -27,17 +27,7 @@ class ProductDetailTopContainerViewController: InlineViewController {
         super.viewDidLoad()
         
         _vCarousel.isPagingEnabled = true
-//        _vCarousel.itemWidth =
-        
-        if let productInfo = _product {
-            if let images = productInfo.images {
-                if images.count > 0 {
-                    self._numOfImages = images.count
-                    self._pageController.numberOfPages = self._numOfImages
-                    _vCarousel.reloadData()
-                }
-            }
-        }
+
         _pageController.currentPage = 0;
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector((self.scrollPageController)), userInfo: nil, repeats: true)
         
@@ -54,7 +44,13 @@ class ProductDetailTopContainerViewController: InlineViewController {
             if let status =  product.status
                 ,let name =  product.name
                 ,let price =  product.price
-                ,let sku =  product.sku{
+                ,let sku =  product.sku
+                ,let images = product.images{
+                if images.count > 0 {
+                    self._numOfImages = images.count
+                    self._pageController.numberOfPages = self._numOfImages
+                    _vCarousel.reloadData()
+                }
                 _lbProductName.text = name
                 _lbProductSKU.text = sku
                 if let statusSale = status.sale {
